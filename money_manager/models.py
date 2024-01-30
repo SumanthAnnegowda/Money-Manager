@@ -1,4 +1,5 @@
 from django.db import models
+from accounts.models import CustomUser
 
 
 class Income_Category(models.Model):
@@ -33,6 +34,7 @@ class  Expense_Subcategory(models.Model):
 
 
 class Expense(models.Model):
+    owner = models.ForeignKey(CustomUser, on_delete = models.CASCADE)
     date = models.DateField(auto_now=True)
     amount = models.IntegerField()
     Transaction_mode_status = [
@@ -65,6 +67,7 @@ class Expense(models.Model):
         verbose_name_plural = "Expense"
 
 class Income(models.Model):
+    owner = models.ForeignKey(CustomUser, on_delete = models.CASCADE)
     date = models.DateField(auto_now = True)
     amount = models.IntegerField()
     transaction_mode_status = [
