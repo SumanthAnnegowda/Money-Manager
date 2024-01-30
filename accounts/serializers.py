@@ -89,4 +89,4 @@ class LogoutSerializer(serializers.Serializer):
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ['email', 'phone_number', 'first_name', 'last_name']
+        fields = ['email', 'first_name', 'last_name']
