@@ -68,7 +68,6 @@ class ExpenseDetail(AccessViewSetMixin, generics.RetrieveUpdateDestroyAPIView):
 
 
 class IncomeList(AccessViewSetMixin,generics.ListCreateAPIView):
-    queryset = Income.objects.all()
     serializer_class = IncomeSerializer
     access_policy = ReadOnlyAccessPolicy
 
